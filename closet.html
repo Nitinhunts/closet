@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closet Companion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9; /* Light background */
+            color: #333; /* Dark text for contrast */
+            display: flex;
+            flex-direction: row; /* Ensure the left and right sections are aligned side by side */
+            padding-top: 60px; /* Adjust space for the header */
+        }
+        .left-section {
+            width: 70%;
+        }
+        header {
+            background-color: #ff6f61; /* Vibrant coral red for the header */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px; /* Reduced padding for a shorter header */
+            position: absolute; /* Positioning the header above the main content */
+            top: 0;
+            left: 0;
+            width: 100%; /* Full width */
+            z-index: 1000; /* Ensure the header stays on top */
+        }
+        header h1 {
+            margin: 0;
+            color: #fff; /* White color for the title */
+        }
+        .profile-picture {
+            margin-right: 25px;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+        section {
+            padding: 20px;
+        }
+        section h2 {
+            margin-bottom: 20px;
+            color: #e74c3c; /* Vibrant red color for section headers */
+        }
+        .items-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        .item-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .item {
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transformation for hover */
+        }
+        .item img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transformation for hover */
+        }
+        .item-name {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #f39c12; /* Vibrant yellow for item names */
+        }
+        .item:hover img {
+            transform: scale(1.1); /* Increase image size on hover */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+        }
+        .add-box {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #3498db; /* Vibrant blue for Add button */
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        .add-box:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transform: scale(1.1); /* Add scaling effect to Add button */
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #f39c12; /* Vibrant yellow line between sections */
+            margin: 20px 0;
+        }
+        .right-section {
+            width: 30%;
+            background-color: #ecf0f1; /* Light background for the side panel */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+        .image-box {
+            width: 80%;
+            text-align: center;
+        }
+        .image-box img {
+            height: 400px;
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transformation for hover */
+        }
+        .image-box img:hover {
+            transform: scale(1.05); /* Increase image size when hovered */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+        }
+        .customize-box {
+            width: 50%;
+            background-color: #3498db; /* Matching the add button's blue */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .customize-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #e67e22; /* Vibrant orange for Customize button */
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .customize-button:hover {
+            background-color: #d35400; /* Darker orange on hover */
+            transform: scale(1.05); /* Add scaling effect to Customize button */
+        }
+    </style>
+</head>
+<body>
+    <div class="left-section">
+        <header>
+            <h1>Closet Companion</h1>
+            <img src="cutie.jpeg" alt="Profile Picture" class="profile-picture">
+        </header>
+
+        <!-- Shirts Section -->
+        <section class="shirts-section">
+            <h2>Shirts</h2>
+            <div class="items-container">
+                <div class="item-row">
+                    <div class="item">
+                        <img src="shirt.jpg" alt="Casual Shirt">
+                        <div class="item-name">Casual Shirt</div>
+                    </div>
+                    <div class="item">
+                        <img src="shirt2.jpg" alt="Formal Shirt">
+                        <div class="item-name">Formal Shirt</div>
+                    </div>
+                </div>
+                <div class="add-box">Add</div>
+            </div>
+        </section>
+
+        <hr> <!-- Horizontal line between sections -->
+
+        <!-- Pants Section -->
+        <section class="pants-section">
+            <h2>Pants</h2>
+            <div class="items-container">
+                <div class="item-row">
+                    <div class="item">
+                        <img src="jins.jpg" alt="Jeans">
+                        <div class="item-name">Jeans</div>
+                    </div>
+                    <div class="item">
+                        <img src="chinos.jpg" alt="Chinos">
+                        <div class="item-name">Chinos</div>
+                    </div>
+                </div>
+                <div class="add-box">Add</div>
+            </div>
+        </section>
+
+        <hr> <!-- Horizontal line between sections -->
+
+        <!-- Accessories Section -->
+        <section class="accessories-section">
+            <h2>Accessories</h2>
+            <div class="items-container">
+                <div class="item-row">
+                    <div class="item">
+                        <img src="watch.jpg" alt="Watch">
+                        <div class="item-name">Watch</div>
+                    </div>
+                    <div class="item">
+                        <img src="glasses.jpg" alt="Sunglasses" style="width: auto;">
+                        <div class="item-name">Sunglasses</div>
+                    </div>
+                </div>
+                <div class="add-box">Add</div>
+            </div>
+        </section>
+    </div>
+
+    <div class="right-section">
+        <div class="image-box">
+            <img src="manin.jpg" alt="Man">
+        </div>
+        <div class="customize-box">
+            <h2>Avatar</h2>
+            <button class="customize-button">Customize</button>
+        </div>
+    </div>
+</body>
+</html>
